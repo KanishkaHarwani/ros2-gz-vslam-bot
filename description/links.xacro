@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- =========================================== -->
+    <!-- =============== CHASSIS ================= -->
+    <!-- =========================================== -->
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.000973 0.000007 0.486096" rpy="0 0 0"/>
+      	    <mass value="185.1322568023575"/>
+      	    <inertia ixx="11.056144" iyy="30.914741" izz="38.217336" ixy="0.00074" ixz="0.00702" iyz="-0.000207"/>
+    	</inertial>
+    	<visual>
+            <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="desert_tan"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- =========================================== -->
+    <!-- =========== LEFT-FRONT WHEEL ============== -->
+    <!-- =========================================== -->
+    <link name="l_f_wheel_link">
+        <inertial>
+            <origin xyz="0 0.11207 0" rpy="0 0 0"/>
+            <mass value="7.511940733814897"/>
+            <inertia ixx="0.104634" iyy="0.189223" izz="0.104634" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- =========================================== -->
+    <!-- =========== RIGHT_FRONT WHEEL ============= -->
+    <!-- =========================================== -->
+    <link name="r_f_wheel_link">
+        <inertial>
+            <origin xyz="0 -0.11207 0" rpy="0 0 0"/>
+            <mass value="7.511940733814895"/>
+            <inertia ixx="0.104634" iyy="0.189223" izz="0.104634" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.45 0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.45 0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- =========================================== -->
+    <!-- =========== LEFT-REAR WHEEL =============== -->
+    <!-- =========================================== -->
+    <link name="l_r_wheel_link">
+        <inertial>
+            <origin xyz="0 0.11207 0" rpy="0 0 0"/>
+            <mass value="7.511940733814895"/>
+            <inertia ixx="0.104634" iyy="0.189223" izz="0.104634" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- =========================================== -->
+    <!-- =========== RIGHT_REAR WHEEL ============== -->
+    <!-- =========================================== -->
+    <link name="r_r_wheel_link">
+        <inertial>
+            <origin xyz="0 -0.11207 0" rpy="0 0 0"/>
+            <mass value="7.511940733814895"/>
+            <inertia ixx="0.104634" iyy="0.189223" izz="0.104634" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.45 0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.45 0.325 -0.225" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- =========================================== -->
+    <!-- ============= FRONT BUMPER ================ -->
+    <!-- =========================================== -->
+    <link name="front_bumper_link">
+        <inertial>
+            <origin xyz="0.071440 -0.225000 -0.018717" rpy="0 0 0"/>
+            <mass value="13.822332678327909"/>
+            <inertia ixx="1.050773" iyy="0.249928" izz="0.823861" ixy="0.0" iyz="0.0" ixz="0.000988"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.7 -0.225 -0.45" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/front_bumper_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.7 -0.225 -0.45" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/front_bumper_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- =========================================== -->
+    <!-- ========== FRONT RGBD CAMERA ============== -->
+    <!-- =========================================== -->
+    <link name="f_rgbd_link">
+        <inertial>
+            <origin xyz="0 0 0.0225" rpy="0 0 0"/>
+            <mass value="0.5186547939422563"/>
+            <inertia ixx="0.000946" iyy="0.00017" izz="0.000952" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.6525 0 -0.705" rpy="0 0 1.5708"/>
+            <geometry>
+            <mesh filename="package://eos_v2/meshes/front_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+            <material name="green"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.6525 0 -0.705" rpy="0 0 1.5708"/>
+            <geometry>
+            <mesh filename="package://eos_v2/meshes/front_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        </collision>
+    </link>
+    
+    <!-- =========================================== -->
+    <!-- =========== REAR RGBD CAMERA ============== -->
+    <!-- =========================================== -->
+    <link name="r_rgbd_link">
+        <inertial>
+            <origin xyz="0 0 0.0225" rpy="0 0 0"/>
+            <mass value="0.5186547939422562"/>
+            <inertia ixx="0.000946" iyy="0.00017" izz="0.000952" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.6525 0 -0.705" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/rear_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+        <collision>
+            <origin xyz="0.6525 0 -0.705" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/rear_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+  </link>
+
+</robot>
