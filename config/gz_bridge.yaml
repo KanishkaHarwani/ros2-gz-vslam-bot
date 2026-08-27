@@ -1,10 +1,6 @@
-
-# NEEDS TO BE EDITED
-
 # Bridges gz-transport topics <-> ROS 2 topics.
-# Image topics (camera/image, camera/depth_image) are NOT listed here -
-# they're bridged separately via ros_gz_image (see launch_sim.launch.py)
-# which is more efficient for image data.
+# Ignition Fortress + ros_gz_bridge (Humble). Type strings use gz.msgs.*,
+# which the bridge accepts as an alias for ignition.msgs.* on Humble.
 
 # published by Gazebo's clock
 - ros_topic_name: "clock"
@@ -41,16 +37,89 @@
   direction: ROS_TO_GZ
 
 
-# published by the rgb_camera sensor
-- ros_topic_name: "camera/camera_info"
-  gz_topic_name: "camera/camera_info"
+# =========================================================
+# FRONT CAMERA (rgbd_camera sensor, topic base "camera/front")
+# =========================================================
+- ros_topic_name: "camera/front/image"
+  gz_topic_name: "camera/front/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "camera/front/depth_image"
+  gz_topic_name: "camera/front/depth_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "camera/front/points"
+  gz_topic_name: "camera/front/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "camera/front/camera_info"
+  gz_topic_name: "camera/front/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
-# published by the depth_camera sensor
-- ros_topic_name: "camera/depth_image/points"
-  gz_topic_name: "camera/depth_image/points"
+
+# =========================================================
+# REAR CAMERA (rgbd_camera sensor, topic base "camera/rear")
+# =========================================================
+- ros_topic_name: "camera/rear/image"
+  gz_topic_name: "camera/rear/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "camera/rear/depth_image"
+  gz_topic_name: "camera/rear/depth_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "camera/rear/points"
+  gz_topic_name: "camera/rear/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "camera/rear/camera_info"
+  gz_topic_name: "camera/rear/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+
+# =========================================================
+# FRONT LIDAR (gpu_lidar sensor, topic base "lidar/front/scan")
+# =========================================================
+- ros_topic_name: "lidar/front/scan"
+  gz_topic_name: "lidar/front/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "lidar/front/points"
+  gz_topic_name: "lidar/front/scan/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+
+# =========================================================
+# REAR LIDAR (gpu_lidar sensor, topic base "lidar/rear/scan")
+# =========================================================
+- ros_topic_name: "lidar/rear/scan"
+  gz_topic_name: "lidar/rear/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "lidar/rear/points"
+  gz_topic_name: "lidar/rear/scan/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
   direction: GZ_TO_ROS
