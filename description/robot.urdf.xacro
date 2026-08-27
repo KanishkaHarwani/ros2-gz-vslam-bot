@@ -5,7 +5,7 @@
     <xacro:include filename="materials.xacro"/>
     <xacro:include filename="joints.xacro"/>
     <xacro:include filename="gazebo_materials.xacro"/>
-    <xacro:include filename="gazebo_control.xacro"/>
+    <xacro:include filename="gazebo_controls.xacro"/>
     <xacro:include filename="gazebo_sensors.xacro"/>
     
 </robot>
