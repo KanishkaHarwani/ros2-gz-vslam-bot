@@ -2,30 +2,27 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <gazebo>
-        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+        <plugin filename="libignition-gazebo-diff-drive-system.so" name="ignition::gazebo::systems::DiffDrive">
 
-            <!-- Wheel Information -->
-            <left_joint>left_wheel_joint</left_joint>
-            <right_joint>right_wheel_joint</right_joint>
-            <wheel_separation>0.35</wheel_separation>
-            <wheel_diameter>0.15</wheel_diameter>
+            <!-- Wheel joints: two per side for the 4-wheel skid-steer -->
+            <left_joint>l_f_wheel_joint</left_joint>
+            <left_joint>l_r_wheel_joint</left_joint>
+            <right_joint>r_f_wheel_joint</right_joint>
+            <right_joint>r_r_wheel_joint</right_joint>
 
+            <!-- Wheel geometry -->
+            <wheel_separation>0.65</wheel_separation>
+            <wheel_radius>0.075</wheel_radius>
 
-            <!-- Limits -->
-            <max_wheel_torque>200</max_wheel_torque>
-            <max_wheel_acceleration>10.0</max_wheel_acceleration>
-
-            
             <!-- Output -->
-            <odometry_frame>odom</odometry_frame>
-            <robot_base_frame>base_link</robot_base_frame>
-
-            <publish_odom>true</publish_odom>
-            <publish_odom_tf>true</publish_odom_tf>
-            <publish_wheel_tf>true</publish_wheel_tf>
+            <odom_publish_frequency>50</odom_publish_frequency>
+            <topic>cmd_vel</topic>
+            <odom_topic>odom</odom_topic>
+            <tf_topic>tf</tf_topic>
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_link</child_frame_id>
 
         </plugin>
     </gazebo>
-
 
 </robot>
