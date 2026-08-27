@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>a 4-wheeled robot to test visual SLAM</description>
   <maintainer email="kanishk.harwani@gmail.com">Josh Newans</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
