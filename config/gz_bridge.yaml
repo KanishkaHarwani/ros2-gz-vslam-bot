@@ -2,6 +2,10 @@
 # Ignition Fortress + ros_gz_bridge (Humble). Type strings use gz.msgs.*,
 # which the bridge accepts as an alias for ignition.msgs.* on Humble.
 
+# =========================================================
+# CLOCK / STATE / ODOMETRY
+# =========================================================
+
 # published by Gazebo's clock
 - ros_topic_name: "clock"
   gz_topic_name: "clock"
