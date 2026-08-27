@@ -1,29 +1,69 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
     <gazebo reference="base_link">
-        <material>Gazebo/White</material>
+        <material>
+            <ambient>0.820 0.710 0.550 1.000</ambient>
+            <diffuse>0.820 0.710 0.550 1.000</diffuse>
+        </material>
     </gazebo>
+
     <gazebo reference="l_f_wheel_link">
-        <material>Gazebo/Black</material>
+        <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+        </material>
     </gazebo>
     <gazebo reference="l_r_wheel_link">
-        <material>Gazebo/Black</material>
+        <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+        </material>
     </gazebo>
     <gazebo reference="r_f_wheel_link">
-        <material>Gazebo/Black</material>
+        <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+        </material>
     </gazebo>
     <gazebo reference="r_r_wheel_link">
-        <material>Gazebo/Black</material>
+        <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+        </material>
     </gazebo>
-    
+
     <gazebo reference="front_bumper_link">
-        <material>Gazebo/Green</material>
+        <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+        </material>
     </gazebo>
+
     <gazebo reference="f_rgbd_link">
-        <material>Gazebo/Orange</material>
+        <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+        </material>
     </gazebo>
     <gazebo reference="r_rgbd_link">
-        <material>Gazebo/Orange</material>
+        <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+        </material>
+    </gazebo>
+
+    <gazebo reference="f_lidar_link">
+        <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+        </material>
+    </gazebo>
+    <gazebo reference="r_lidar_link">
+        <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+        </material>
     </gazebo>
 
 </robot>
