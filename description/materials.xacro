@@ -21,5 +21,8 @@
     <material name="orange">
         <color rgba="1 0.3 0.1 1"/>
     </material>
+    <material name="desert_tan">
+        <color rgba="0.820 0.710 0.550 1.000"/>
+    </material>
 
 </robot>
