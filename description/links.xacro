@@ -193,4 +193,52 @@
         </collision>
   </link>
 
+    <!-- =========================================== -->
+    <!-- ========== FRONT LIVOX LIDAR ============== -->
+    <!-- =========================================== -->
+    <link name="f_lidar_link">
+        <inertial>
+            <origin xyz="0 0 0.0375" rpy="0 0 0"/>
+            <mass value="1.0750137361502572"/>
+            <inertia ixx="0.001176" iyy="0.001176" izz="0.001344" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.58 0 -0.785" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/front_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.58 0 -0.785" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/front_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- =========================================== -->
+    <!-- =========== REAR LIVOX LIDAR =============== -->
+    <!-- =========================================== -->
+    <link name="r_lidar_link">
+        <inertial>
+            <origin xyz="0 0 0.0375" rpy="0 0 0"/>
+            <mass value="1.0750137361502572"/>
+            <inertia ixx="0.001176" iyy="0.001176" izz="0.001344" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.58 0 -0.785" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/rear_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="0.58 0 -0.785" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://eos_v2/meshes/rear_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
 </robot>

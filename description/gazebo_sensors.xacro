@@ -4,8 +4,11 @@
     <!-- ========== FRONT CAMERA SENSOR ============ -->
     <!-- =========================================== -->
     <gazebo reference="f_rgbd_link">
-        <sensor name="front camera" type="depth">
+        <sensor name="front_camera" type="rgbd_camera">
             <update_rate>20</update_rate>
+            <always_on>1</always_on>
+            <visualize>true</visualize>
+            <topic>camera/front</topic>
             <camera>
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
@@ -18,11 +21,6 @@
                     <far>20.0</far>
                 </clip>
             </camera>
-            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-                <frame_name>camera_optical_frame</frame_name>
-                <min_depth>0.1</min_depth>
-                <max_depth>8.0</max_depth>
-            </plugin>
         </sensor>
     </gazebo>
 
@@ -30,8 +28,11 @@
     <!-- =========== REAR CAMERA SENSOR ============ -->
     <!-- =========================================== -->
     <gazebo reference="r_rgbd_link">
-        <sensor name="rear camera" type="depth">
+        <sensor name="rear_camera" type="rgbd_camera">
             <update_rate>20</update_rate>
+            <always_on>1</always_on>
+            <visualize>true</visualize>
+            <topic>camera/rear</topic>
             <camera>
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
@@ -44,11 +45,72 @@
                     <far>20.0</far>
                 </clip>
             </camera>
-            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-                <frame_name>camera_optical_frame</frame_name>
-                <min_depth>0.1</min_depth>
-                <max_depth>8.0</max_depth>
-            </plugin>
+        </sensor>
+    </gazebo>
+
+    <!-- =========================================== -->
+    <!-- ========== FRONT LIDAR SENSOR ============= -->
+    <!-- =========================================== -->
+    <gazebo reference="f_lidar_link">
+        <sensor name="front_lidar" type="gpu_lidar">
+            <update_rate>10</update_rate>
+            <always_on>1</always_on>
+            <visualize>true</visualize>
+            <topic>lidar/front/scan</topic>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>640</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.14159</min_angle>
+                        <max_angle>3.14159</max_angle>
+                    </horizontal>
+                    <vertical>
+                        <samples>16</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-0.2618</min_angle>
+                        <max_angle>0.2618</max_angle>
+                    </vertical>
+                </scan>
+                <range>
+                    <min>0.1</min>
+                    <max>30.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+            </lidar>
+        </sensor>
+    </gazebo>
+
+    <!-- =========================================== -->
+    <!-- ========== REAR LIDAR SENSOR =============== -->
+    <!-- =========================================== -->
+    <gazebo reference="r_lidar_link">
+        <sensor name="rear_lidar" type="gpu_lidar">
+            <update_rate>10</update_rate>
+            <always_on>1</always_on>
+            <visualize>true</visualize>
+            <topic>lidar/rear/scan</topic>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>640</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.14159</min_angle>
+                        <max_angle>3.14159</max_angle>
+                    </horizontal>
+                    <vertical>
+                        <samples>16</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-0.2618</min_angle>
+                        <max_angle>0.2618</max_angle>
+                    </vertical>
+                </scan>
+                <range>
+                    <min>0.1</min>
+                    <max>30.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+            </lidar>
         </sensor>
     </gazebo>
 </robot>
