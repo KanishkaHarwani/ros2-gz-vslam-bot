@@ -13,14 +13,14 @@
     	<visual>
             <origin xyz="0 0 0" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="desert_tan"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -37,14 +37,14 @@
         <visual>
             <origin xyz="-0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <origin xyz="-0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -61,14 +61,14 @@
         <visual>
             <origin xyz="-0.45 0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <origin xyz="-0.45 0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -85,14 +85,14 @@
         <visual>
             <origin xyz="0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <origin xyz="0.45 -0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -109,14 +109,14 @@
         <visual>
             <origin xyz="0.45 0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <origin xyz="0.45 0.325 -0.225" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -133,14 +133,14 @@
         <visual>
             <origin xyz="-0.7 -0.225 -0.45" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/front_bumper_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_bumper_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
             <origin xyz="-0.7 -0.225 -0.45" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/front_bumper_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_bumper_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -157,14 +157,14 @@
         <visual>
             <origin xyz="-0.6525 0 -0.705" rpy="0 0 1.5708"/>
             <geometry>
-            <mesh filename="package://eos_v2/meshes/front_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+            <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
             <material name="green"/>
         </visual>
         <collision>
             <origin xyz="-0.6525 0 -0.705" rpy="0 0 1.5708"/>
             <geometry>
-            <mesh filename="package://eos_v2/meshes/front_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+            <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         </collision>
     </link>
@@ -181,14 +181,14 @@
         <visual>
             <origin xyz="0.6525 0 -0.705" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/rear_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/rear_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="green"/>
         </visual>
         <collision>
             <origin xyz="0.6525 0 -0.705" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/rear_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/rear_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
   </link>
@@ -205,14 +205,14 @@
         <visual>
             <origin xyz="-0.58 0 -0.785" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/front_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
         <collision>
             <origin xyz="-0.58 0 -0.785" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/front_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -229,14 +229,14 @@
         <visual>
             <origin xyz="0.58 0 -0.785" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/rear_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/rear_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
         <collision>
             <origin xyz="0.58 0 -0.785" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://eos_v2/meshes/rear_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/rear_livox_lidar_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
