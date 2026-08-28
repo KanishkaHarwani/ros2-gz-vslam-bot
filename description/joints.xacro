@@ -15,14 +15,14 @@
         <origin xyz="-0.45 0.325 0.225" rpy="0 0 0"/>
         <parent link="base_link"/>
         <child link="l_r_wheel_link"/>
-        <axis xyz="0.0 -1.0 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
     </joint>
 
     <joint name="r_r_wheel_joint" type="continuous">
         <origin xyz="-0.45 -0.325 0.225" rpy="0 0 0"/>
         <parent link="base_link"/>
         <child link="r_r_wheel_link"/>
-        <axis xyz="0.0 -1.0 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
     </joint>
 
     <joint name="r_f_wheel_joint" type="continuous">

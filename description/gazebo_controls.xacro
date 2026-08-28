@@ -11,8 +11,8 @@
             <right_joint>r_r_wheel_joint</right_joint>
 
             <!-- Wheel geometry -->
-            <wheel_separation>0.65</wheel_separation>
-            <wheel_radius>0.075</wheel_radius>
+            <wheel_separation>0.874</wheel_separation>
+            <wheel_radius>0.225</wheel_radius>
 
             <!-- Output -->
             <odom_publish_frequency>50</odom_publish_frequency>
@@ -22,6 +22,10 @@
             <frame_id>odom</frame_id>
             <child_frame_id>base_link</child_frame_id>
 
+        </plugin>
+
+        <plugin filename="libignition-gazebo-joint-state-publisher-system.so" name="ignition::gazebo::systems::JointStatePublisher">
+            <topic>joint_states</topic>
         </plugin>
     </gazebo>
 
