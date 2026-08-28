@@ -9,6 +9,7 @@
         <parent link="base_link"/>
         <child link="l_f_wheel_link"/>
         <axis xyz="0.0 1.0 0.0"/>
+        <dynamics damping="1.0" friction="0.1"/>
     </joint>
 
     <joint name="l_r_wheel_joint" type="continuous">
@@ -16,6 +17,7 @@
         <parent link="base_link"/>
         <child link="l_r_wheel_link"/>
         <axis xyz="0.0 1.0 0.0"/>
+        <dynamics damping="1.0" friction="0.1"/>
     </joint>
 
     <joint name="r_r_wheel_joint" type="continuous">
@@ -23,6 +25,7 @@
         <parent link="base_link"/>
         <child link="r_r_wheel_link"/>
         <axis xyz="0.0 1.0 0.0"/>
+        <dynamics damping="1.0" friction="0.1"/>
     </joint>
 
     <joint name="r_f_wheel_joint" type="continuous">
@@ -30,6 +33,7 @@
         <parent link="base_link"/>
         <child link="r_f_wheel_link"/>
         <axis xyz="0.0 1.0 0.0"/>
+        <dynamics damping="1.0" friction="0.1"/>
     </joint>
 
     <!-- =========================================== -->
