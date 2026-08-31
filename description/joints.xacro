@@ -37,12 +37,21 @@
     </joint>
 
     <!-- =========================================== -->
-    <!-- ================ BUMPER JOINT ============= -->
+    <!-- ================ BUMPER JOINTS ============ -->
     <!-- =========================================== -->
     <joint name="front_bumper_joint" type="fixed">
         <origin xyz="0.7 0.225 0.45" rpy="0 0 0"/>
         <parent link="base_link"/>
         <child link="front_bumper_link"/>
+    </joint>
+
+    <!-- Mirrors front_bumper_joint across the YZ plane (X negated) to
+         counterbalance the front bumper's mass and pull the whole-robot
+         center of mass back toward base_link's origin. -->
+    <joint name="rear_bumper_joint" type="fixed">
+        <origin xyz="-0.7 0.225 0.45" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="rear_bumper_link"/>
     </joint>
 
     <!-- =========================================== -->

@@ -144,6 +144,30 @@
             </geometry>
         </collision>
     </link>
+
+    <!-- =========================================== -->
+    <!-- ============= REAR BUMPER ================= -->
+    <!-- =========================================== -->
+    <link name="rear_bumper_link">
+        <inertial>
+            <origin xyz="-0.071440 -0.225000 -0.018717" rpy="0 0 0"/>
+            <mass value="13.822332678327909"/>
+            <inertia ixx="1.050773" iyy="0.249928" izz="0.823861" ixy="0.0" iyz="0.0" ixz="-0.000988"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.7 -0.225 -0.45" rpy="0 0 -1.5708"/>
+            <geometry>
+                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_bumper_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.071440 -0.225000 -0.018717" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.12 0.95 0.5"/>
+            </geometry>
+        </collision>
+    </link>
     
     <!-- =========================================== -->
     <!-- ========== FRONT RGBD CAMERA ============== -->

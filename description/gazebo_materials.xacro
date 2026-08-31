@@ -8,32 +8,65 @@
         </material>
     </gazebo>
 
+    <!-- Anisotropic wheel friction: mu1 (fdir1 = rolling direction, local X)
+         kept high for straight-line traction; mu2 (lateral, local Y) lowered
+         so wheels can slide sideways during a skid-steer pivot without
+         stick-slip. kp/kd soften contact stiffness slightly to reduce
+         numerical jitter. Starting values — tune mu2 down further (e.g. 0.15)
+         if rocking persists, or up if the robot starts sliding out during
+         normal turns. -->
     <gazebo reference="l_f_wheel_link">
         <material>
             <ambient>0 0 0 1</ambient>
             <diffuse>0 0 0 1</diffuse>
         </material>
+        <mu1>1.0</mu1>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <kp>1e6</kp>
+        <kd>10</kd>
     </gazebo>
     <gazebo reference="l_r_wheel_link">
         <material>
             <ambient>0 0 0 1</ambient>
             <diffuse>0 0 0 1</diffuse>
         </material>
+        <mu1>1.0</mu1>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <kp>1e6</kp>
+        <kd>10</kd>
     </gazebo>
     <gazebo reference="r_f_wheel_link">
         <material>
             <ambient>0 0 0 1</ambient>
             <diffuse>0 0 0 1</diffuse>
         </material>
+        <mu1>1.0</mu1>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <kp>1e6</kp>
+        <kd>10</kd>
     </gazebo>
     <gazebo reference="r_r_wheel_link">
         <material>
             <ambient>0 0 0 1</ambient>
             <diffuse>0 0 0 1</diffuse>
         </material>
+        <mu1>1.0</mu1>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <kp>1e6</kp>
+        <kd>10</kd>
     </gazebo>
 
     <gazebo reference="front_bumper_link">
+        <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+        </material>
+    </gazebo>
+    <gazebo reference="rear_bumper_link">
         <material>
             <ambient>1 1 1 1</ambient>
             <diffuse>1 1 1 1</diffuse>
