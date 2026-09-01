@@ -18,7 +18,20 @@
     <plugin
       filename="libignition-gazebo-sensors-system.so"
       name="ignition::gazebo::systems::Sensors">
+      <!-- Reverted to ogre2 — legacy ogre failed to render the robot's
+           STL meshes/materials correctly at all (near-blank frames with
+           fragmented uncolored geometry), a worse failure than the
+           original intermittent motion-triggered corruption on ogre2.
+           Sticking with ogre2 and pursuing other mitigations instead. -->
       <render_engine>ogre2</render_engine>
+      <!-- Forces the render thread to stay synchronized with the physics
+           thread on every step, instead of rendering asynchronously.
+           Without this, GPU sensors (rgbd_camera, gpu_lidar) attached to
+           a moving link can grab a partially-updated frame buffer while
+           the link's pose is changing mid-render, producing torn/partial
+           images — clean while stationary, corrupted once the robot moves.
+           This is the documented fix for that failure mode. -->
+      <lockstep>true</lockstep>
     </plugin>
 
     <plugin

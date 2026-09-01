@@ -5,14 +5,17 @@
     <!-- =========================================== -->
     <gazebo reference="f_rgbd_link">
         <sensor name="front_camera" type="rgbd_camera">
+            <pose>0 0 0 0 0 0</pose>
             <update_rate>30</update_rate>
             <visualize>true</visualize>
+            <always_on>true</always_on>
             <topic>camera/front</topic>
-            <camera>
+            <gz_frame_id>f_rgbd_link</gz_frame_id>
+            <camera name="front_camera">
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
-                    <width>1920</width>
-                    <height>1080</height>
+                    <width>640</width>
+                    <height>480</height>
                     <format>R8G8B8</format>
                 </image>
                 <clip>
@@ -50,6 +53,7 @@
     <!-- =========================================== -->
     <!-- ========== FRONT LIDAR SENSOR ============= -->
     <!-- =========================================== -->
+    <!--
     <gazebo reference="f_lidar_link">
         <sensor name="front_lidar" type="gpu_lidar">
             <pose>0 0 0 0 0 0</pose>
@@ -60,16 +64,16 @@
             <lidar>
                 <scan>
                     <horizontal>
-                        <samples>360</samples>
+                        <samples>240</samples>
                         <resolution>1</resolution>
-                        <min_angle>-3.14</min_angle>
-                        <max_angle>3.14</max_angle>
+                        <min_angle>-2.193</min_angle>
+                        <max_angle>2.193</max_angle>
                     </horizontal>
                     <vertical>
                         <samples>16</samples>
                         <resolution>1</resolution>
-                        <min_angle>-0.2618</min_angle>
-                        <max_angle>0.2618</max_angle>
+                        <min_angle>-0.1</min_angle>
+                        <max_angle>0.179</max_angle>
                     </vertical>
                 </scan>
                 <range>
@@ -80,10 +84,12 @@
             </lidar>
         </sensor>
     </gazebo>
+    -->
 
     <!-- =========================================== -->
     <!-- ========== REAR LIDAR SENSOR =============== -->
     <!-- =========================================== -->
+    <!--
     <gazebo reference="r_lidar_link">
         <sensor name="rear_lidar" type="gpu_lidar">
             <pose>0 0 0 0 0 0</pose>
@@ -94,16 +100,16 @@
             <lidar>
                 <scan>
                     <horizontal>
-                        <samples>360</samples>
+                        <samples>240</samples>
                         <resolution>1</resolution>
-                        <min_angle>-3.14</min_angle>
-                        <max_angle>3.14</max_angle>
+                        <min_angle>-2.193</min_angle>
+                        <max_angle>2.193</max_angle>
                     </horizontal>
                     <vertical>
                         <samples>16</samples>
                         <resolution>1</resolution>
-                        <min_angle>-0.2618</min_angle>
-                        <max_angle>0.2618</max_angle>
+                        <min_angle>-0.1</min_angle>
+                        <max_angle>0.179</max_angle>
                     </vertical>
                 </scan>
                 <range>
@@ -114,4 +120,5 @@
             </lidar>
         </sensor>
     </gazebo>
+    -->
 </robot>
