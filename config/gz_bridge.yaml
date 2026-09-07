@@ -75,7 +75,7 @@
 
 
 # =========================================================
-# REAR CAMERA (split into separate camera + depth_camera sensors)
+# REAR CAMERA (combined rgbd_camera sensor, topic base "camera/rear")
 # =========================================================
 - ros_topic_name: "camera/rear/image"
   gz_topic_name: "camera/rear/image"
@@ -89,47 +89,46 @@
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
+- ros_topic_name: "camera/rear/points"
+  gz_topic_name: "camera/rear/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
 - ros_topic_name: "camera/rear/camera_info"
   gz_topic_name: "camera/rear/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
-# points (DISABLED) — see note under FRONT CAMERA above.
-# - ros_topic_name: "camera/rear/points"
-#   gz_topic_name: "camera/rear/points"
-#   ros_type_name: "sensor_msgs/msg/PointCloud2"
-#   gz_type_name: "gz.msgs.PointCloudPacked"
-#   direction: GZ_TO_ROS
-
 
 # =========================================================
 # FRONT LIDAR (gpu_lidar sensor, topic base "lidar/front/scan")
 # =========================================================
-#- ros_topic_name: "lidar/front/scan"
-#  gz_topic_name: "lidar/front/scan"
-#  ros_type_name: "sensor_msgs/msg/LaserScan"
-#  gz_type_name: "gz.msgs.LaserScan"
-#  direction: GZ_TO_ROS
+- ros_topic_name: "lidar/front/scan"
+  gz_topic_name: "lidar/front/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
 
-#- ros_topic_name: "lidar/front/points"
-#  gz_topic_name: "lidar/front/scan/points"
-#  ros_type_name: "sensor_msgs/msg/PointCloud2"
-#  gz_type_name: "gz.msgs.PointCloudPacked"
-#  direction: GZ_TO_ROS
+- ros_topic_name: "lidar/front/points"
+  gz_topic_name: "lidar/front/scan/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
 
 
 # =========================================================
 # REAR LIDAR (gpu_lidar sensor, topic base "lidar/rear/scan")
 # =========================================================
-#- ros_topic_name: "lidar/rear/scan"
-#  gz_topic_name: "lidar/rear/scan"
-#  ros_type_name: "sensor_msgs/msg/LaserScan"
-#  gz_type_name: "gz.msgs.LaserScan"
-#  direction: GZ_TO_ROS
+- ros_topic_name: "lidar/rear/scan"
+  gz_topic_name: "lidar/rear/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
 
-#- ros_topic_name: "lidar/rear/points"
-#  gz_topic_name: "lidar/rear/scan/points"
-#  ros_type_name: "sensor_msgs/msg/PointCloud2"
-#  gz_type_name: "gz.msgs.PointCloudPacked"
-#  direction: GZ_TO_ROS
+- ros_topic_name: "lidar/rear/points"
+  gz_topic_name: "lidar/rear/scan/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS

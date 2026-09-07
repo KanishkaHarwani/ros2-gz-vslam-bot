@@ -12,9 +12,22 @@
     	</inertial>
     	<visual>
     	    <origin xyz="0.000973 0.000007 0.486096" rpy="0 0 0"/>
-            <origin xyz="0 0 0" rpy="0 0 1.5708"/>
             <geometry>
                 <box size="1.35 0.75 0.30"/>
+            </geometry>
+            <material name="desert_tan"/>
+        </visual>
+        <visual>
+    	    <origin xyz="0.55 0.0 0.685" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.1"/>
+            </geometry>
+            <material name="desert_tan"/>
+        </visual>
+         <visual>
+    	    <origin xyz="-0.55 0.0 0.685" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.1"/>
             </geometry>
             <material name="desert_tan"/>
         </visual>
@@ -180,16 +193,27 @@
             <inertia ixx="0.000946" iyy="0.00017" izz="0.000952" ixy="0.0" iyz="0.0" ixz="0.0"/>
         </inertial>
         <visual>
-            <origin xyz="-0.6525 0 -0.705" rpy="0 0 1.5708"/>
             <geometry>
-            <mesh filename="package://ros2-gz-vslam-bot/description/meshes/front_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+        <visual>
+            <origin xyz="0.035 0 0" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <cylinder radius="0.015" length="0.02"/>
+            </geometry>
             <material name="green"/>
         </visual>
         <collision>
-            <origin xyz="0 0 0.0225" rpy="0 0 0"/>
             <geometry>
-                <box size="0.045 0.15 0.045"/>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.035 0 0" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <cylinder radius="0.015" length="0.02"/>
             </geometry>
         </collision>
     </link>
@@ -204,16 +228,27 @@
             <inertia ixx="0.000946" iyy="0.00017" izz="0.000952" ixy="0.0" iyz="0.0" ixz="0.0"/>
         </inertial>
         <visual>
-            <origin xyz="0.6525 0 -0.705" rpy="0 0 1.5708"/>
             <geometry>
-                <mesh filename="package://ros2-gz-vslam-bot/description/meshes/rear_rgbd_camera_link.stl" scale="0.001 0.001 0.001"/>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+        <visual>
+            <origin xyz="0.035 0 0" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <cylinder radius="0.015" length="0.02"/>
             </geometry>
             <material name="green"/>
         </visual>
         <collision>
-            <origin xyz="0 0 0.0225" rpy="0 0 0"/>
             <geometry>
-                <box size="0.045 0.15 0.045"/>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.035 0 0" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <cylinder radius="0.015" length="0.02"/>
             </geometry>
         </collision>
   </link>
