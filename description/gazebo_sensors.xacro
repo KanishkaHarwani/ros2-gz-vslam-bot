@@ -3,21 +3,15 @@
     <!-- =========================================== -->
     <!-- ========== FRONT CAMERA SENSORS ============ -->
     <!-- =========================================== -->
-    <!-- Split into two separate sensors instead of one combined rgbd_camera.
-         This exercises different gz-sensors code (CameraSensor / DepthCameraSensor)
-         than the combined RgbdCameraSensor implementation, which showed
-         intermittent frame corruption on ogre2 during robot motion
-         (matches gazebosim/ros_gz#738, closed upstream with no fix).
-         Trade-off: no fused colored point cloud output anymore — if your
-         VSLAM framework needs that, this will need revisiting. Frameworks
-         that sync separate RGB + depth + camera_info topics (e.g. RTAB-Map)
-         are unaffected. -->
     <gazebo reference="f_rgbd_link">
-        <sensor name="front_camera" type="camera">
-            <update_rate>30</update_rate>
+        <sensor name="rgbd_camera" type="rgbd_camera">
+            <pose>0.05 0 0 0 0 0</pose>
+            <always_on>true</always_on>
             <visualize>true</visualize>
-            <topic>camera/front/image</topic>
-            <camera>
+            <update_rate>20</update_rate>
+            <topic>camera</topic>
+            <gz_frame_id>front_camera_link</gz_frame_id>
+            <camera name="rgbd_camera">
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
                     <width>640</width>
@@ -28,27 +22,13 @@
                     <near>0.05</near>
                     <far>20.0</far>
                 </clip>
-                <camera_info_topic>camera/front/camera_info</camera_info_topic>
-            </camera>
-        </sensor>
-    </gazebo>
-
-    <gazebo reference="f_rgbd_link">
-        <sensor name="front_depth_camera" type="depth_camera">
-            <update_rate>30</update_rate>
-            <visualize>true</visualize>
-            <topic>camera/front/depth_image</topic>
-            <camera>
-                <horizontal_fov>1.089</horizontal_fov>
-                <image>
-                    <width>640</width>
-                    <height>480</height>
-                    <format>R_FLOAT32</format>
-                </image>
-                <clip>
-                    <near>0.05</near>
-                    <far>20.0</far>
-                </clip>
+                <camera_info_topic>camera/camera_info</camera_info_topic>
+                <depth_camera>
+                    <clip>
+                        <near>0.05</near>
+                        <far>10.0</far>
+                    </clip>
+                </depth_camera>
             </camera>
         </sensor>
     </gazebo>
@@ -56,25 +36,15 @@
     <!-- =========================================== -->
     <!-- =========== REAR CAMERA SENSOR ============ -->
     <!-- =========================================== -->
-    <!-- Combined rgbd_camera sensor, per request, modeled on a found
-         reference example (visualize=false, nested depth_camera clip
-         range adopted; noise/distortion/custom intrinsics/L8 format and
-         $(arg ns) syntax deliberately NOT carried over).
-         NOTE: this is the same sensor type that caused front camera's
-         motion-triggered corruption bug (matches gazebosim/ros_gz#738)
-         before front was split into separate camera + depth_camera
-         sensors. Rear was never independently tested for this bug —
-         this is an accepted risk. If rear shows the same flat/corrupted
-         frames during motion, the fix that worked for front (splitting
-         into separate camera + depth_camera sensors, see f_rgbd_link's
-         blocks above) will work here too. -->
     <gazebo reference="r_rgbd_link">
-        <sensor name="rear_camera" type="rgbd_camera">
+        <sensor name="camera2_rgbd" type="rgbd_camera">
+            <pose>0.05 0 0 0 0 0</pose>
+            <always_on>true</always_on>
+            <visualize>true</visualize>
             <update_rate>20</update_rate>
-            <always_on>1</always_on>
-            <visualize>false</visualize>
-            <topic>camera/rear</topic>
-            <camera>
+            <topic>camera2</topic>
+            <gz_frame_id>rear_camera_link</gz_frame_id>
+            <camera name="rgbd_camera">
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
                     <width>640</width>
@@ -85,14 +55,10 @@
                     <near>0.05</near>
                     <far>20.0</far>
                 </clip>
-                <!-- Separate, tighter clip range specifically for the depth
-                     output, adopted from the reference example — typical
-                     of real RGBD hardware (depth range is usually shorter
-                     than the color image's usable range). Adjust if you
-                     want depth to match the full 20m color range instead. -->
+                <camera_info_topic>camera2/camera_info</camera_info_topic>
                 <depth_camera>
                     <clip>
-                        <near>0.1</near>
+                        <near>0.05</near>
                         <far>10.0</far>
                     </clip>
                 </depth_camera>
@@ -103,7 +69,6 @@
     <!-- =========================================== -->
     <!-- ========== FRONT LIDAR SENSOR ============= -->
     <!-- =========================================== -->
-    <!--
     <gazebo reference="f_lidar_link">
         <sensor name="front_lidar" type="gpu_lidar">
             <pose>0 0 0 0 0 0</pose>
@@ -134,12 +99,10 @@
             </lidar>
         </sensor>
     </gazebo>
-    -->
-
+    
     <!-- =========================================== -->
     <!-- ========== REAR LIDAR SENSOR =============== -->
     <!-- =========================================== -->
-    <!--
     <gazebo reference="r_lidar_link">
         <sensor name="rear_lidar" type="gpu_lidar">
             <pose>0 0 0 0 0 0</pose>
@@ -170,5 +133,4 @@
             </lidar>
         </sensor>
     </gazebo>
-    -->
 </robot>
