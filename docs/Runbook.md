@@ -1,4 +1,4 @@
-# Runbook — ros2-gz-vslam-bot (Ignition Fortress + ROS 2 Humble)
+# Runbook — ros2_gz_vslam_bot (Ignition Fortress + ROS 2 Humble)
 
 Commands assume ROS 2 Humble and Ignition Fortress are already installed
 system-wide, and your workspace is at `~/ros2_ws` (adjust paths as needed).
@@ -23,13 +23,13 @@ sudo apt install -y \
 ### 1.2 Place the package in your workspace
 ```bash
 cd ~/ros2_ws/src
-# copy or clone ros2-gz-vslam-bot here so the tree looks like:
-# ~/ros2_ws/src/ros2-gz-vslam-bot/{package.xml, CMakeLists.txt, description/, launch/, config/, worlds/}
+# copy or clone ros2_gz_vslam_bot here so the tree looks like:
+# ~/ros2_ws/src/ros2_gz_vslam_bot/{package.xml, CMakeLists.txt, description/, launch/, config/, worlds/}
 ```
 
 ### 1.3 Confirm mesh files are in place
 ```bash
-ls ~/ros2_ws/src/ros2-gz-vslam-bot/description/meshes/
+ls ~/ros2_ws/src/ros2_gz_vslam_bot/description/meshes/
 # Expect: base_link.stl, left_front_wheel_link.stl, right_front_wheel_link.stl,
 # left_rear_wheel_link.stl, right_rear_wheel_link.stl, front_bumper_link.stl,
 # front_rgbd_camera_link.stl, rear_rgbd_camera_link.stl,
@@ -40,7 +40,7 @@ ls ~/ros2_ws/src/ros2-gz-vslam-bot/description/meshes/
 ```bash
 cd ~/ros2_ws
 rosdep install --from-paths src --ignore-src -r -y
-colcon build --packages-select ros2-gz-vslam-bot
+colcon build --packages-select ros2_gz_vslam_bot
 ```
 
 ---
@@ -57,7 +57,7 @@ source ~/ros2_ws/install/setup.bash
 This one command starts `robot_state_publisher`, gz-sim with your world,
 spawns the robot, and starts the ROS↔Gazebo bridge:
 ```bash
-ros2 launch ros2-gz-vslam-bot launch_sim.launch.py
+ros2 launch ros2_gz_vslam_bot launch_sim.launch.py
 ```
 
 If gz-sim opens with an empty world and no robot, wait a few seconds —
@@ -116,7 +116,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ## 5. Visualizing in RViz2
 
 ```bash
-rviz2 -d ~/ros2_ws/src/ros2-gz-vslam-bot/config/view_bot.rviz
+rviz2 -d ~/ros2_ws/src/ros2_gz_vslam_bot/config/view_bot.rviz
 ```
 (Adjust the path if `view_bot.rviz` ends up somewhere other than `config/`
 in your final layout — see the open question in section 6.)
@@ -147,7 +147,7 @@ keep initial render load light.
 
 | Symptom | Likely cause |
 |---|---|
-| Robot doesn't spawn / gz-sim errors on mesh load | `package://` path mismatch — confirm `ros2-gz-vslam-bot` resolves via `ros2 pkg prefix ros2-gz-vslam-bot` and meshes are under `description/meshes/` |
+| Robot doesn't spawn / gz-sim errors on mesh load | `package://` path mismatch — confirm `ros2_gz_vslam_bot` resolves via `ros2 pkg prefix ros2_gz_vslam_bot` and meshes are under `description/meshes/` |
 | No camera/lidar data on any topic | Sensors system plugin missing `ogre2` render engine, or bridge node not running — check `gz topic -l` first to isolate Gazebo-side vs. bridge-side |
 | Robot doesn't move on `/cmd_vel` | Check wheel joint names in `gazebo_controls.xacro` match `joints.xacro` exactly (`l_f_wheel_joint`, etc.) |
 | RViz shows nothing under Fixed Frame `odom` | `/tf` not bridging — check `gz_bridge.yaml` has the `tf` entry and `gz topic -l` shows `/tf` being published |

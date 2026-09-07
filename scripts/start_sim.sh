@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# start_sim.sh — bring up the full ros2-gz-vslam-bot stack in one shot:
+# start_sim.sh — bring up the full ros2_gz_vslam_bot stack in one shot:
 #   1. launch_sim.launch.py   (gz-sim + robot_state_publisher + spawn + ros_gz_bridge)
 #   2. rviz2                  (using config/view_bot.rviz)
 #   3. joy_node                (raw joystick input)
@@ -17,7 +17,7 @@ set -u
 # ---- Adjust these if your setup differs ------------------------------
 ROS_DISTRO_SETUP="/opt/ros/humble/setup.bash"
 WORKSPACE_SETUP="$HOME/ros2_ws/install/setup.bash"
-PACKAGE_NAME="ros2-gz-vslam-bot"
+PACKAGE_NAME="ros2_gz_vslam_bot"
 RVIZ_CONFIG="$HOME/learn_ws/src/${PACKAGE_NAME}/config/view_bot.rviz"
 
 # teleop_twist_joy axis/button mapping — controller-specific, re-check

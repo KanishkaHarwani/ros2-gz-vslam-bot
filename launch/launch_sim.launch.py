@@ -14,9 +14,9 @@ def generate_launch_description():
     package_name = 'ros2_gz_vslam_bot'
 
     # Tell Gazebo where to resolve model:// URIs from. ros_gz_sim rewrites the
-    # URDF's package:// mesh paths into model://ros2-gz-vslam-bot/... when
+    # URDF's package:// mesh paths into model://ros2_gz_vslam_bot/... when
     # converting to SDF, so Gazebo needs the *parent* of the installed share
-    # directory on its resource path to find the "ros2-gz-vslam-bot" folder.
+    # directory on its resource path to find the "ros2_gz_vslam_bot" folder.
     gz_resource_path = SetEnvironmentVariable(
         'IGN_GAZEBO_RESOURCE_PATH',
         os.path.join(get_package_share_directory(package_name), '..')
