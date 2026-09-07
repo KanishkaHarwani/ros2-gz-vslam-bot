@@ -11,7 +11,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    package_name = 'ros2-gz-vslam-bot'
+    package_name = 'ros2_gz_vslam_bot'
 
     # Tell Gazebo where to resolve model:// URIs from. ros_gz_sim rewrites the
     # URDF's package:// mesh paths into model://ros2-gz-vslam-bot/... when

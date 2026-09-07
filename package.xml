@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ros2-gz-vslam-bot</name>
+  <name>ros2_gz_vslam_bot</name>
   <version>0.0.1</version>
   <description>a 4-wheeled robot to test visual SLAM</description>
   <maintainer email="kanishk.harwani@gmail.com">Kanishka Harwani</maintainer>
