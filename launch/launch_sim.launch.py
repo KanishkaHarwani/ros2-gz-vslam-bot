@@ -69,6 +69,18 @@ def generate_launch_description():
         }],
         output='screen'
     )
+    # Bridge the color and depth image topics with the more efficient
+    # image-specific bridge
+    ros_gz_image_bridge = Node(
+        package='ros_gz_image',
+        executable='image_bridge',
+        arguments=[
+            '/camera/image',
+            '/camera/depth_image',
+            '/camera2/image',
+            '/camera2/depth_image',
+        ]
+    )
 
     # Launch them all!
     return LaunchDescription([
