@@ -5,21 +5,18 @@
 # =========================================================
 # CLOCK / STATE / ODOMETRY
 # =========================================================
-
 # published by Gazebo's clock
 - ros_topic_name: "clock"
   gz_topic_name: "clock"
   ros_type_name: "rosgraph_msgs/msg/Clock"
   gz_type_name: "gz.msgs.Clock"
   direction: GZ_TO_ROS
-
 # published by the JointStatePublisher plugin
 - ros_topic_name: "joint_states"
   gz_topic_name: "joint_states"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
-
 # published by the DiffDrive plugin
 - ros_topic_name: "odom"
   gz_topic_name: "odom"
@@ -32,7 +29,6 @@
   ros_type_name: "tf2_msgs/msg/TFMessage"
   gz_type_name: "gz.msgs.Pose_V"
   direction: GZ_TO_ROS
-
 # subscribed to by the DiffDrive plugin
 - ros_topic_name: "cmd_vel"
   gz_topic_name: "cmd_vel"
@@ -40,63 +36,33 @@
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ
 
-
 # =========================================================
-# FRONT CAMERA (split into separate camera + depth_camera sensors)
+# FRONT CAMERA (combined rgbd_camera sensor, topic base "/camera*")
 # =========================================================
-- ros_topic_name: "camera/front/image"
-  gz_topic_name: "camera/front/image"
-  ros_type_name: "sensor_msgs/msg/Image"
-  gz_type_name: "gz.msgs.Image"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "camera/front/depth_image"
-  gz_topic_name: "camera/front/depth_image"
-  ros_type_name: "sensor_msgs/msg/Image"
-  gz_type_name: "gz.msgs.Image"
-  direction: GZ_TO_ROS
-
 - ros_topic_name: "camera/front/camera_info"
   gz_topic_name: "camera/front/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
-# points (DISABLED) — the combined rgbd_camera sensor auto-published a
-# fused colored point cloud at this topic; the separate camera+depth_camera
-# sensors don't produce the same guaranteed output. Check `gz topic -l`
-# after launch if you want to confirm whether depth_camera publishes its
-# own (uncolored) points topic and re-enable/rename this entry accordingly.
-# - ros_topic_name: "camera/front/points"
-#   gz_topic_name: "camera/front/points"
-#   ros_type_name: "sensor_msgs/msg/PointCloud2"
-#   gz_type_name: "gz.msgs.PointCloudPacked"
-#   direction: GZ_TO_ROS
-
-
-# =========================================================
-# REAR CAMERA (combined rgbd_camera sensor, topic base "camera/rear")
-# =========================================================
-- ros_topic_name: "camera/camera_info"
-  gz_topic_name: "camera/camera_info"
-  ros_type_name: "sensor_msgs/msg/CameraInfo"
-  gz_type_name: "gz.msgs.CameraInfo"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "camera2/camera_info"
-  gz_topic_name: "camera2/camera_info"
-  ros_type_name: "sensor_msgs/msg/CameraInfo"
-  gz_type_name: "gz.msgs.CameraInfo"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "camera/points"
-  gz_topic_name: "camera/points"
+- ros_topic_name: "camera/front/points"
+  gz_topic_name: "camera/front/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
   direction: GZ_TO_ROS
+
+# =========================================================
+# REAR CAMERA (combined rgbd_camera sensor, topic base "/camera*")
+# =========================================================
  
-- ros_topic_name: "camera2/points"
-  gz_topic_name: "camera2/points"
+- ros_topic_name: "camera/rear/camera_info"
+  gz_topic_name: "camera/rear/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "camera/rear/points"
+  gz_topic_name: "camera/rear/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
   direction: GZ_TO_ROS

@@ -75,10 +75,10 @@ def generate_launch_description():
         package='ros_gz_image',
         executable='image_bridge',
         arguments=[
-            '/camera/image',
-            '/camera/depth_image',
-            '/camera2/image',
-            '/camera2/depth_image',
+            '/camera/front/image',
+            '/camera/front/depth_image',
+            '/camera/rear/image',
+            '/camera/rear/depth_image',
         ]
     )
 
@@ -89,4 +89,5 @@ def generate_launch_description():
         gz_sim,
         spawn_entity,
         gz_bridge_node,
+        ros_gz_image_bridge,
     ])
